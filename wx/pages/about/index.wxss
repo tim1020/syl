@@ -1,0 +1,20 @@
+/* pages/about/index.wxss */
+.header {
+    padding: 40rpx 20rpx;
+    width:100%;
+    background-color:#EDEDED;
+    text-align:center;
+}
+.title {
+    font-size:40rpx;
+    padding:5rpx;
+}
+.section-title {
+    font-size:32rpx;
+    margin:20rpx;
+}
+.content-block {
+    font-size:28rpx;
+    text-indent: 60rpx;
+    padding:10rpx;
+}

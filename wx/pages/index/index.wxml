@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<import src="/libs/wxSearch/wxSearch.wxml"/>
+<template is="wxSearch" data="{{wxSearchData}}"/>
+
+<view class="container">
+
+    <view class="block" style="text-align:center;">
+        <swiper autoplay="true" interval="5000" indicator-dots="true">
+            <swiper-item wx:for="{{rand_list}}" wx:key="{{index}}">
+                <navigator url="/pages/list/detail?id={{item.id}}">
+                    <image class="image-swiper" src="{{imgUrl}}{{item.cover}}"  mode="scaleToFill" />
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+
+    <view class="block">
+        <text class="h1">最新收录</text>
+        <view class="weui-panel__bd">
+            <navigator url="/pages/list/detail?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" wx:for="{{new_list}}" wx:key="{{index}}">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                    <image class="weui-media-box__thumb" src="{{imgUrl}}{{item.thumb}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title f-30">{{item.title}}</view>
+                    <view class="weui-media-box__desc">{{item.desc}}</view>
+                </view>
+            </navigator>  
+        </view>
+    </view>
+
+    <view class="block">
+        <text class="h1">热门线路</text>
+      
+        <view class="tags">
+            <block wx:for="{{tags}}" wx:key="key" wx:for-index="key">
+                <view class='tag tag-font' style="background-color:{{tagsColor[key]}}" data-words="{{item}}" bindtap="toSearch">{{item}}</view>
+            </block>
+        </view>
+  
+    </view>
+  
+    <view class="block" style="text-align:center;">
+        <view class="weui-flex" style="flex-wrap:wrap;">
+            <block wx:for="{{hot_list}}" wx:key="{{index}}">
+                <view style="width:50%;">
+                    <navigator url="/pages/list/detail?id={{item.id}}">
+                        <view class="placeholder">
+                            <image class="image-flex" mode="scaleToFill" src="{{imgUrl}}{{item.thumb}}"/>
+                        </view>
+                        <view class="card-text-ml">
+                            <view class="f-30">{{item.title}}</view>
+                            <view class="sub-text">{{item.recommend}}人推荐, {{item.like}}人想去</view>
+                        </view>
+                    </navigator>
+                </view>   
+            </block>
+        </view>
+    </view>
+
+</view>

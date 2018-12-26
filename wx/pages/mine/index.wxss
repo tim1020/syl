@@ -1,0 +1,48 @@
+/**index.wxss**/
+.header {
+  width:100%;
+  background-color:#EDEDED
+}
+.userinfo{
+  display:flex;
+  margin:10rpx 20rpx;
+}
+.userinfo-avatar {
+  width: 138rpx;
+  height: 138rpx;
+}
+.userinfo-nickname {
+  margin:20rpx;
+  font-size: 32rpx;
+}
+.btn-login{
+  font-size:26rpx;
+  margin-right:5rpx;
+  margin-top:20rpx;
+  height:70rpx;
+}
+.active {
+  margin: 20rpx;
+  font-size:32rpx;
+  padding-bottom:5rpx;
+  border-bottom:5rpx solid #178061;
+}
+.not-active{
+  margin: 20rpx;
+  font-size:24rpx;
+}
+.more-tips {
+  text-align:center;
+  color:#b7b7b7;
+  font-size:28rpx;
+  margin:20rpx;
+  padding:20rpx; 
+}
+.none-tips {
+  font-size:30rpx;
+  padding: 100rpx 0;
+}
+.footer{
+  text-align:center;
+  margin-top:20px;
+}

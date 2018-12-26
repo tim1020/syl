@@ -1,0 +1,104 @@
+<!--detail.wxml-->
+<view class="container">
+
+    <view class="modalDlg" wx:if="{{showModal}}">
+        <view style="margin-top:20rpx;padding:30rpx;">请授权登录</view>
+        <view style="font-size:30rpx; margin: 0 30rpx; padding:10rpx;">
+            我们需要你的授权以获取你在微信上的公开信息(头像、昵称)来完成登录。
+        </view>
+        <button class="modalBtn" lang="zh_CN" open-type="getUserInfo" bindgetuserinfo="getUserInfo" bindtap="hiddenModal">知道了</button>
+    </view>
+    <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+
+    <view wx:if="{{showGallery}}" class="modal-gallery" bindtap="closeGallery" bindtouchstart = "touchstart" bindtouchend="touchend">
+        <image src="{{imgUrl}}{{gallery.src}}" class="image-gallery" mode="widthFix"/>
+        <view class="gallery-idx">{{gallery.pos}} / {{gallery.total}} </view>
+    </view>
+    <view class="mask"  wx:if="{{showGallery}}"></view>
+   
+    <view class="block" style="text-align:center;">
+        <view class="h1">{{poi.title}}</view>  
+        <view class="sub-text">所在地：{{poi.locate || '--' }}</view>  
+        <view class="tags" wx:if="{{poi.tags}}">
+            <block wx:for="{{poi.tags}}" wx:key="key" wx:for-index="key">
+              <view bindtap="toSearch" data-tag="{{item}}" class='tag tag-font' style="background-color:{{tagsColor[key]}}">{{item}}</view>
+            </block>
+      </view>
+    </view>
+
+    <view class="block" style="text-align:center;">
+        <image src="{{poi.cover ? imgUrl + poi.cover : ''}}" class="image-cover" mode="scaleToFill"/>
+    </view>
+
+    <view class="block box">
+        <view class="weui-flex box-cell">
+            <view class="weui-flex__item border-r">
+                <view style="font-size:38rpx;padding-top:16rpx;">{{poi.distance || '--'}} km</view>
+            </view>
+            <view class="weui-flex__item border-r">
+                <view>{{poi.altitude || '--'}}</view>
+                <view class="sub-text">最高海拔(m)</view>
+            </view>
+     
+            <view class="weui-flex__item">
+                <view>{{poi.cumulative_up || '--'}}</view>
+                <view class="sub-text">累计爬升(m)</view>
+            </view>
+        </view>
+
+        <view class="weui-flex box-cell">
+            <view class="weui-flex__item border-r" data-type='signin' bindtap="pickState">
+                <view>{{poi.signin}}</view>
+                <view>去过 <text class="fa fa-paper-plane {{uStats.signin ? 'fa-picked' : ''}}" /></view>
+            </view>
+      
+            <view  class="weui-flex__item border-r" data-type='like' bindtap="pickState">
+                <view>{{poi.like}}</view>
+                <view>想去 <text class="fa fa-heart {{uStats.like ? 'fa-picked' : ''}}" /></view>
+            </view>
+     
+            <view  class="weui-flex__item" data-type='recommend' bindtap="pickState">
+                <view>{{poi.recommend}}</view>
+                <view>推荐 <text class="fa fa-thumbs-up {{uStats.recommend ? 'fa-picked' : ''}}" /></view>
+            </view>
+        </view>
+
+    </view>
+
+    <view class="block">
+        <view class="main-text">
+            <rich-text nodes="{{poi.desc}}"></rich-text>
+        </view>
+    </view>
+
+    <view class="block" style="text-align:center;">
+        <view class="weui-flex photo-grid" style="width:100%;margin:20rpx;" wx:if="{{poi.photos}}">
+            <view class="{{poi.photos.length > 2 ? 'pg-item-sm': 'pg-item-lg'}}" wx:for="{{poi.photos}}" wx:key="key">
+                <image data-idx="{{index + 1}}" src="{{imgUrl}}{{item}}" class="{{poi.photos.length > 2 ? 'pg-img-sm' : 'pg-img-lg'}}" mode="scaleToFill" bindtap="openGallery"/>
+            </view>
+        </view>
+    </view>
+
+    <view class="block">
+        <view class="h2">攻略</view>
+        <view class="main-text">
+            <rich-text nodes="{{poi.guide}}"></rich-text>
+        </view>
+    </view>
+
+    <view class="block" wx:if="{{poi.related}}">
+        <view class="h2">相关推荐</view>
+        <view class="tags" style="margin-left:30rpx;" wx:if="{{poi.related}}">
+            <block wx:for="{{poi.related}}" wx:key="key" wx:for-index="key">
+                <navigator url="/pages/list/detail?id={{item.id}}">
+                <view class='tag' style="background-color:{{relatedColor[key]}}">{{item.title}}</view>
+                </navigator>
+            </block>
+        </view>
+    </view>
+
+    <view class="block">
+      <button open-type='share' class="btnShare">分享给好友</button>
+    </view>
+
+</view>

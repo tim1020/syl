@@ -1,0 +1,17 @@
+<view class="container">
+    <view class="header">
+        <view class="title">山野浪</view>
+        <view class="sub-text">版本:20181101</view>
+        <view class="sub-text">作者:Tim</view>
+    </view>
+    <view class="section-title">免责声明</view>
+    <view class="content">
+        <view class="content-block">本程序旨在为户外爱好者提供一些便利，所有路线均自网络搜集，仅作参考，本人并不保证其真实有效，亦不承担由此而引起的各种后果。</view>
+        <view class="content-block">欢迎驴友们们提供更多的线路。如果你是线路档案中所引用的文字或图片的原作者，且认为合法权益受到侵犯，请告知本人删除。</view>
+    </view>
+    <view class="section-title">联系我</view>
+    <view class="content">
+        <view class="content-block">微信：tim8670</view>
+        <view class="content-block">邮箱：tim8670@gmail.com</view>
+	</view>
+</view>

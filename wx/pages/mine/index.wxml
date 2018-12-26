@@ -1,0 +1,76 @@
+<view class="container" bindtouchstart = "touchstart" bindtouchend="touchend">
+  <loading hidden="{{hiddenLoading}}">加载中...</loading>
+
+  <view class="header">
+    <view class="userinfo">
+		  <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}"></image>
+      <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+      <button class="btn-login" lang="zh_CN" open-type="getUserInfo" bindgetuserinfo="getUserInfo" wx:if="{{!hasUserInfo}}">登 录</button>
+    </view>
+  </view>
+  
+  <view class="h1" style="width:100%;">
+      <text class="{{tabsSelected == 1 ? 'active' : 'not-active'}}" data-index="1" bindtap="switchTab">去过({{signin.total}})</text>
+      <text class="{{tabsSelected == 2 ? 'active' : 'not-active'}}" data-index="2" bindtap="switchTab">想去({{like.total}})</text>
+  </view>
+    
+  <view wx:if="{{tabsSelected == 1}}" class="box">
+    <block wx:if="{{signin.list.length > 0}}">
+     <view class="weui-panel__bd">
+        <navigator url="/pages/list/detail?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" wx:for="{{signin.list}}" wx:key="{{index}}">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{imgUrl}}{{item.thumb}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+              <view class="weui-media-box__title f-30">
+                {{item.title}}
+                 <text style="float:right;" class="sub-text">去过({{item.signin}})</text>
+              </view>
+              <view class="weui-media-box__desc">{{item.desc}}</view>
+          </view>
+        </navigator>
+      </view>
+      <view class="more-tips" wx:if="{{signin.hasMore}}">---- 上拉加载更多 ^_^ ----</view>
+      <view class="more-tips" wx:else>---- 没有更多了 ^&^ ----</view>
+    </block>
+    <block wx:else>
+        <view class="none-tips">
+          <text>暂无"去过"的线路</text>
+        </view>
+    </block>
+  </view>
+
+
+  <view wx:if="{{tabsSelected == 2}}" class="box">
+      <block wx:if="{{like.list.length > 0}}">
+      <view class="weui-panel__bd">
+        <navigator url="/pages/list/detail?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" wx:for="{{like.list}}" wx:key="{{index}}">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{imgUrl}}{{item.thumb}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title f-30">
+            {{item.title}}
+            <text style="float:right;margin-left:10rpx;" class="sub-text">想去({{item.like}})</text>
+            <text style="float:right;" class="sub-text">推荐({{item.recommend}})</text>
+            </view>
+            <view class="weui-media-box__desc">{{item.desc}}</view>
+          </view>
+        </navigator>  
+      </view>
+      <view class="more-tips" wx:if="{{like.hasMore}}">---- 上拉加载更多 ^_^ ----</view>
+      <view class="more-tips" wx:else>---- 没有更多了 ^&^ ----</view>
+    </block>
+    <block wx:else>
+      <view class="none-tips">
+        <text>暂无"想去"的线路</text>
+      </view>
+    </block>
+  </view>
+
+  <view class="footer sub-text">
+    <navigator url="/pages/about/index">免责声明</navigator>
+    <text>FullYoung.vip@2019</text>
+  </view>
+
+</view>

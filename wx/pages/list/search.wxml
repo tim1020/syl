@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<import src="/libs/wxSearch/wxSearch.wxml"/>
+<template is="wxSearch" data="{{wxSearchData}}"/>
+
+<view class="container"  bindtouchstart = "touchstart" bindtouchend="touchend">
+   <loading hidden="{{hiddenLoading}}">加载中...</loading>
+
+   <view class="block" style="display:flex;text-align:center;width:90%;">
+        <view class="weui-search-bar__form">
+            <view class="weui-search-bar__box">
+                <input type="text" class="weui-search-bar__input" placeholder="搜 索 线 路" value="{{wxSearchData.value}}"
+                    bindfocus="wxSerchFocus" bindinput="wxSearchInput" bindblur="wxSearchBlur"  />
+                <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                    <icon type="clear" size="14"></icon>
+                </view>
+            </view>
+        </view>
+        <button bindtap="wxSearchFn"><icon class="weui-icon-search_in-box" type="search" size="13"></icon></button>
+    </view>
+    <view class="block">
+        <view class="tags">
+            <block wx:for="{{tags}}" wx:key="key" wx:for-index="key">
+                <view class='tag tag-font' style="background-color:{{tagsColor[key]}}" data-tag="{{item}}" bindtap="searchTag">{{item}}</view>
+            </block>
+        </view>
+    </view>
+    <view class="block weui-flex">
+        <view class="weui-flex__item h1" style="margin-left:40rpx;">线路列表</view>
+        <view class="weui-flex__item">
+            <view class="weui-flex sort-text">
+                <text style="padding:10rpx;">排序:</text>
+                <view class="bg1" bindtap="swSort" id="recommend">推荐<text class="{{sortIcon.recommend}}" /> </view>
+                <view class="bg1" bindtap="swSort" id="like">想去 <text class="{{sortIcon.like}}" /> </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="block">
+        <view class="weui-panel__bd box">
+            <navigator url="/pages/list/detail?id={{item.id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{dataset}}" wx:key="{{index}}">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                    <image class="weui-media-box__thumb" src="{{imgUrl}}{{item.cover}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title f-30">{{item.title}}
+                    <text style="float:right;margin-left:10rpx;" class="sub-text">想去({{item.like}})</text>
+                    <text style="float:right;" class="sub-text">推荐({{item.recommend}})</text>
+                    </view>
+                    <view class="weui-media-box__desc">{{item.desc}}</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+
+    <view class="block more-tips">
+        <view class="more-tips" wx:if="{{hasMore}}">---- 上拉加载更多 ^_^ ----</view>
+        <view class="more-tips" wx:else>---- 没有更多了 ^&^ ----</view>
+    </view>
+</view>

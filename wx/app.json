@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/index",
+    "pages/about/index",
+    "pages/list/detail",
+    "pages/list/search",
+    "pages/about/error"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#178061",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "山野浪",
+    "backgroundColor": "#178061",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "white",
+    "borderStyle": "white",
+    "backgroundColor": "#178061",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/imgs/iconfont-home.png",
+        "selectedIconPath": "assets/imgs/iconfont-home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/list/search",
+        "iconPath": "assets/imgs/iconfont-list.png",
+        "selectedIconPath": "assets/imgs/iconfont-list-active.png",
+        "text": "列表"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "iconPath": "assets/imgs/iconfont-user.png",
+        "selectedIconPath": "assets/imgs/iconfont-user-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": false
+}

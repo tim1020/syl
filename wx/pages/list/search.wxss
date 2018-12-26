@@ -1,0 +1,32 @@
+/**index.wxss**/
+@import "/libs/wxSearch/wxSearch.wxss";
+
+.block {
+  width:100%;
+  margin-top:10rpx;
+}
+.box {
+  background-color: #FAFAFA;
+  width:100%;
+}
+.sort-text{
+  width:100%;
+  font-size:26rpx;
+  margin-top:15rpx ;
+  align-items: center;
+}
+.bg1{
+  border:1px solid chocolate;
+  border-radius: 10rpx;
+  margin-right:15rpx;
+  padding:5rpx 10rpx;
+}
+.more-tips {
+  text-align:center;
+  color:#b7b7b7;
+  font-size:28rpx;
+  margin:20rpx;
+  padding:20rpx; 
+}
+.tags{ width: 100%; margin: 2rpx 20rpx;}
+.tag{ padding: 2rpx 10rpx; margin: 10rpx; border-radius: 4rpx; float: left; color: #fff;}

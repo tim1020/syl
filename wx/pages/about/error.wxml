@@ -1,0 +1,4 @@
+<!--pages/about/error.wxml-->
+<text>pages/about/error.wxml</text>
+<view style="font-size:18px;">错误</view>
+<view style="font-size:13px;">{{msg}}</view>

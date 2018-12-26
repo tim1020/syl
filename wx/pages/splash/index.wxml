@@ -1,0 +1,3 @@
+<view class="splash" style="heigh:100%">
+	<image src="{{imgData}}" style="width:100%;heigh:100%" mode="scaleToFill"></image>
+</view>

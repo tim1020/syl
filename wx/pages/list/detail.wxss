@@ -1,0 +1,131 @@
+/* pages/list/detail.wxss */
+
+.h2{
+    font-size:28rpx;
+    padding:10rpx 30rpx;
+    text-align:left;
+    text-decoration:underline; 
+}
+.box {
+  width:100%;
+  margin:10rpx;
+  padding:10rpx;
+  background-color: #FAFAFA;
+  text-align: center;
+  font-size:28rpx;
+}
+.box-cell {
+    padding:8rpx;
+    font-size:28rpx;
+}
+.border-r {
+    border-right: 1px solid #E8E8E8;
+}
+
+.tags{ margin: 2rpx;display: inline-flex; }
+.tag{ padding: 2rpx 10rpx; margin: 10rpx; border-radius: 4rpx; color: #fff; }
+
+.image-cover{
+  width:95%;
+  height: 400rpx;
+}
+.image-gallery{
+    width:100%;
+    height:880rpx;
+    margin-top:100rpx;
+}
+.gallery-idx{
+    margin:10rpx;
+    font-size:32rpx;
+    text-align:center;
+    color:white;
+}
+.photo-grid{
+    align-items: center;
+    text-align:center;
+    flex-wrap:wrap;
+}
+.main-text{
+    font-size:28rpx;
+    padding:10rpx 30rpx;
+}
+.p1 {
+    margin-top:25rpx;
+}
+.btnShare{
+  margin:20rpx;padding:5rpx;
+  font-size:28rpx;
+}
+
+.pg-item-lg {
+    width:92%; 
+    margin:7rpx;
+    border:1px solid #E8E8E8;
+}
+.pg-item-sm{
+    width:30%; 
+    margin:4rpx;
+    border:1px solid #E8E8E8;
+}
+.pg-img-lg{
+    width:100%;
+    height:350rpx;
+}
+.pg-img-sm{
+    width:100%;
+    height:180rpx;
+}
+.fa-picked {
+  color:red;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 9000;
+    opacity: 0.7;
+}
+   
+.modalDlg {
+    width: 80%;
+    height: 450rpx;
+    position: fixed;
+    top: 20%;
+    z-index: 9999;
+    background-color: #fff;
+    border-radius: 36rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modalBtn {
+    width: 450rpx;
+    font-size:28rpx;
+    height: 76rpx;
+    background: #f1f1f1;
+    text-align: center;
+    border-radius: 12rpx;
+    margin-top: 68rpx;
+}
+  
+.modal-gallery{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index:10000;
+    background-color: #000; 
+}
+.mask-gallery{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    opacity: 0.8;
+    background-color: #fff;
+}

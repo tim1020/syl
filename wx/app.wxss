@@ -1,0 +1,32 @@
+/**app.wxss**/
+@import '/assets/css/weui.wxss';
+@import "/assets/css/font-awesome.wxss";
+@import '/assets/css/font-icon.wxss';
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0;
+  box-sizing: border-box;
+}
+.block {
+  width:100%;
+  margin-top:10rpx;
+}
+.h1 {
+  font-size: 34rpx;
+  padding:8rpx;
+  margin: 8rpx;
+}
+.sub-text{
+  font-size:24rpx;color:#b7b7b7;
+}
+.f-30{
+  font-size:30rpx;
+}
+.tag-font {
+  font-size:26rpx;
+}

@@ -1,0 +1,40 @@
+/**index.wxss**/
+@import "/libs/wxSearch/wxSearch.wxss";
+
+.block {
+  width:100%;
+  margin:5rpx;
+  padding:5rpx;
+}
+
+.box {
+  background-color: #FAFAFA;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.tags{ width: 100%; margin: 2rpx 20rpx;}
+.tag{ padding: 2rpx 10rpx;margin: 10rpx; border-radius: 4rpx; float: left; color: #fff;}
+
+.image-swiper{
+  width:95%;
+  height: 350rpx;
+}
+.image-flex {
+  width:100%;
+  height: 220rpx;
+}
+
+.placeholder {
+  height:220rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #cccccc;
+  box-shadow: 4rpx 2rpx 2px #cccccc;
+  margin:15rpx;
+}
+
+.card-text-ml {
+  text-align:left;
+  margin-left:30rpx;
+}
